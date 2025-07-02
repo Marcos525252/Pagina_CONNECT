@@ -1,0 +1,474 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #004aad;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#banner {
+  background: #007bff;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#banner button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#modulos {
+  background-color: #eef2f7;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contenedor-modulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.modulo {
+  background-color: white;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modulo:hover {
+  background-color: #d8e9ff;
+  transform: scale(1.05);
+}
+
+/* NUEVO: Módulo bloqueado */
+.modulo.bloqueado {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+#glosario {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+#glosario input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 2px solid #004aad;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contenedor-glosario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.item-seña {
+  width: 150px;
+  text-align: center;
+}
+
+.item-seña img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #004aad;
+}
+
+.item-seña p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #004aad;
+}
+
+#lecciones {
+  padding: 40px 20px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+#contenedor-lecciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tarjeta-leccion {
+  background: white;
+  border: 2px solid #004aad;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+}
+
+.tarjeta-leccion img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.feedback {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#progreso-modulo {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+#barra-progreso {
+  width: 100%;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#barra-interna {
+  height: 100%;
+  width: 0%;
+  background-color: #004aad;
+  transition: width 0.3s ease;
+}
+
+#reiniciar-boton {
+  padding: 10px 20px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+#minijuego {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f7fcff;
+}
+
+#tablero-memorama {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carta {
+  width: 100px;
+  height: 100px;
+  background-color: #004aad;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carta img {
+  width: 80px;
+  height: 80px;
+  display: none;
+}
+
+.carta.abierta img {
+  display: block;
+}
+
+.carta.abierta {
+  background-color: #ffffff;
+  color: #004aad;
+  border: 2px solid #004aad;
+}
+
+#desafio {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff8f0;
+}
+
+#contenedor-desafio {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tarjeta-desafio {
+  background-color: white;
+  border: 2px solid #ffa500;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+}
+
+.tarjeta-desafio img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#resultado-desafio {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+#estadisticas {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9fbfd;
+}
+
+#tabla-estadisticas {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 600px;
+}
+
+#tabla-estadisticas th,
+#tabla-estadisticas td {
+  border: 1px solid #004aad;
+  padding: 10px;
+  text-align: center;
+}
+
+#tabla-estadisticas th {
+  background-color: #004aad;
+  color: white;
+}
+
+#comunidad {
+  background-color: #fefefe;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+#comunidad input,
+#comunidad textarea {
+  width: 90%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #004aad;
+  border-radius: 5px;
+}
+
+#comunidad button {
+  padding: 10px 20px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#lista-comentarios {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comentario {
+  background-color: #e6f0ff;
+  border-left: 5px solid #004aad;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+#perfil {
+  background-color: #f1f9ff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#perfil input {
+  padding: 8px;
+  width: 250px;
+  margin: 10px;
+  border: 2px solid #004aad;
+  border-radius: 5px;
+}
+
+#perfil button {
+  padding: 8px 16px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#estadisticas-globales {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#estadisticas-globales li {
+  margin: 5px 0;
+  font-weight: bold;
+}
+#selector-idioma {
+  margin-top: 10px;
+}
+
+#selector-idioma button {
+  margin: 5px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #ffc107;
+  color: #333;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#repaso {
+  background-color: #f1f7ff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#repaso h4 {
+  margin-top: 30px;
+  color: #004aad;
+}
+
+#drag-items, #drop-targets, #opciones-imagen {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.drag, .drop {
+  padding: 10px 15px;
+  border: 2px dashed #004aad;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: grab;
+  min-width: 100px;
+  text-align: center;
+}
+
+.drop {
+  min-height: 50px;
+}
+
+#juego-completar img, #opciones-imagen img {
+  width: 100px;
+  height: auto;
+  border: 2px solid #004aad;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#perfil {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f0f0f5;
+}
+
+#perfil-form input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 400px;
+  border: 2px solid #004aad;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+#perfil-form button {
+  padding: 10px 20px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#datos-perfil {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #004aad;
+}
